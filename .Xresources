@@ -1,0 +1,27 @@
+! from /etc/X11/fonts/misc/xfonts-base.alias
+URxvt.font: 7x13
+! Others are: rvxt, next, and xterm
+URxvt*scrollBar:         plain
+! Scroll in full-screen apps (like vim)
+URxvt*secondaryScroll:   false
+! Got to have that biiig scrollback
+URxvt*saveLines:         65535
+URxvt*cursorBlink:       false
+
+! Extensions
+URxvt*perl-lib:        /usr/lib/URxvt/perl/
+URxvt*perl-ext-common: default,matcher,searchable-scrollback
+URxvt*urlLauncher:     /usr/bin/chromium-browser
+!URxvt*matcher.button:  1
+! - catch ugly URLs
+URxvt.cutchars: "()*,<>[]{}|''"
+
+
+! ! Appearance
+! !  - use a bitmap font
+! URxvt*font:        -xos4-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+! URxvt*boldFont:    -xos4-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
+! !  - use xft for drawing fonts
+! !URxvt*font:       xft:Terminus:8
+! !  - cursor
+! URxvt*cursorColor: #DCDCCC

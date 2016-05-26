@@ -1,0 +1,18 @@
+* Get git installed, with ssh key auth.
+* Get a PDF viewer going, and install pdf2latex so you can do math homework on here
+  * What would it take to have a terminal on the left side and a pdf viewer on the right, so you can switch back and forth between them?
+  * Just a pdf viewer I think...
+* Figure out how to get rxvt-unicode configs to parse
+  * Get rid of the stupid scrollbar on the left
+* Get haskell, rust, and Go installed
+  * Ghci, by some miracle?
+* Make things. Finish your jinja change. Work on Sandy's text editor.
+  * Look through vim code?
+  * Get the linux regex code parser thing installed?
+  * Some kind of codesearch clone?
+  * Go autocomplete?
+  * Neovim?
+  * Emacs?
+
+* (Done) Get a web browser
+

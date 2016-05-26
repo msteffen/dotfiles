@@ -1,0 +1,31 @@
+# Based on http://people.oregonstate.edu/~thomasky/?q=node/18
+
+# Install this first
+sudo apt-get install xmonad
+sudo apt-get install rxvt-unicode      # urxvt (terminal)
+
+# "I can't believe I have to install this"
+# Chromebook with crouton
+sudo apt-get install man-db    # man
+sudo apt-get install vim       # vim
+sudo apt-get install net-tools # ifconfig
+sudo apt-get install curl      # curl
+sudo apt-get install chromium-browser
+
+#  programming languages
+sudo apt-get install haskell-platform
+sudo apt-get install python
+
+# xmobar
+sudo apt-get install libxpm-dev (X11/xpm.h, needed by next)
+cabal update
+cabal install xmobar
+
+# for ssh and ssh-keygen
+sudo apt-get install openssh-client
+
+# for "killall"
+sudo apt-get install psmisc
+
+# for git
+sudo apt-get install git

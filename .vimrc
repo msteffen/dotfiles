@@ -1,0 +1,55 @@
+""" Like my regular vimrc, but with no plugins
+
+""" General options
+set smartindent
+set ai
+set tabstop=2
+set shiftwidth=2
+set relativenumber
+set ruler
+" Replace tabs with spaces -- not always necessary
+set expandtab
+syntax on
+
+""" Autocommands and autogroups
+augroup format_on_write
+  " au is just short form for autocmd. Like :w and :write. :au! clears other
+  " autocommands in this autogroup, so that :source-ing my vimrc doesn't
+  " cause autocommands to stack
+  au!
+  " Commands executed before writing a buffer to a file.
+  " Clean up all trailing whitespace
+  au BufWritePre *.cc,*.h,*.java,*.py,*.go,*.md,*.sh silent! %s/[ 	]\+$//g
+  " This is a good place to put autoformatting
+  " For example: `au FileType markdown AutoFormatBuffer mdformat`
+augroup END
+
+augroup set_colorcolumn_on_filetype
+  au!
+  " Run `:set filetype?` to see the filetype for the current file
+  au Filetype java set colorcolumn=101,102
+  au Filetype cpp set colorcolumn=81,82
+augroup END
+
+augroup relative_number_in_normal_mode
+  au!
+  au InsertEnter * :set number
+  au InsertLeave * :set relativenumber
+augroup END
+
+hi ColorColumn ctermbg=Gray ctermfg=Black guibg=gray9
+
+""" Search and highlighting
+" Fix syntastic coloring that blends in with my highlight
+" http://stackoverflow.com/questions/17677441/changing-error-highlight-color-used-by-syntasti
+hi SpellBad ctermfg=Black ctermbg=Red
+hi SpellCap ctermfg=Black ctermbg=Yellow
+
+" highlight all occurrences of a match (like emacs)
+hi Search ctermbg=DarkYellow
+set hlsearch
+" Highlight trailing whitespace
+match Search /\s\+$/
+
+" Type <space> to clear search highlighting
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
